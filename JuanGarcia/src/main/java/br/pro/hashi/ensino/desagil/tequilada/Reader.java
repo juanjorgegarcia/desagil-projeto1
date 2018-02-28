@@ -5,22 +5,20 @@ import java.io.BufferedReader;
 
 public class Reader {
 	public static void main (String[] args) throws IOException {
-		try{
-			
-
+		try{			
 			FileReader fr = new FileReader("maze.txt");
 			BufferedReader br = new BufferedReader(fr);
 			
-			int line;
-			int[] maze;
 			
-			while ((line = br.read()) != -1 ) {
-				if ((line ==  '#')){
-					line = 'X';
+			int character;
+			br.readLine();
+			while ((character = br.read()) != -1 ) {
+				if ((character ==  '#')){
+					character = 'X';
 				}
-	
-				System.out.print((char) line);
+				System.out.print((char) character);
 				}
+			br.close();
 			}
 		
 		catch (IOException ex) {
