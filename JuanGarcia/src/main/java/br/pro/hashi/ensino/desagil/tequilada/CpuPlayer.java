@@ -4,8 +4,8 @@ public class CpuPlayer {
 	int x; 
 	int y;
 	public CpuPlayer (int a, int b) {
-		x = a;
-		y = b;
+		this.x = a;
+		this.y = b;
 	}
 
 }
