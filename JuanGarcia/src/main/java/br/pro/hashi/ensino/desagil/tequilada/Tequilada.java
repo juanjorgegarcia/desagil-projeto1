@@ -2,8 +2,14 @@ package br.pro.hashi.ensino.desagil.tequilada;
 
 public class Tequilada {
 	public static void main(String [] args){
-		System.out.println("Projeto 1 ");
 		Engine engine = new Engine();
-		System.out.println(engine.humanPlayer.x);
+
+		engine.board = new Board();
+		engine.board.loadFromFile("maze.txt");
+
+		engine.cpuPlayer = new Player(0,0);
+		engine.humanPlayer = new Player(0,0);
+		engine.update();
+		System.out.println(engine.cpuPlayer.getRow() + " " + engine.cpuPlayer.getCol(  ));
 	}
 }
