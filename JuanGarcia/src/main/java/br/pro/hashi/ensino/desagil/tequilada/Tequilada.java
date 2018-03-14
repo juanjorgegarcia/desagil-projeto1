@@ -22,6 +22,9 @@ public class Tequilada {
 
             	// Constrói a janela.
             	JFrame frame = new JFrame();
+            	
+            	// Adiciona o controlador como observador do teclado.
+            	frame.addKeyListener(controller);
 
             	// Coloca a visão dentro da janela.
             	frame.setContentPane(view);

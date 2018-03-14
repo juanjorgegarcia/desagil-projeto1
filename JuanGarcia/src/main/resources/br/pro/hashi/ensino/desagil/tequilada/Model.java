@@ -8,8 +8,8 @@ public class Model {
 	public Model() {
 		board = new Board("board.txt");
 
-		cpuPlayer = new Player(board.getNumRows() - 1, board.getNumCols() - 1);
-		humanPlayer = new Player(0, 0);
+		cpuPlayer = new CpuPlayer(board.getNumRows() - 1, board.getNumCols() - 1);
+		humanPlayer = new HumanPlayer(0, 0);
 	}
 
 	public void update() {
