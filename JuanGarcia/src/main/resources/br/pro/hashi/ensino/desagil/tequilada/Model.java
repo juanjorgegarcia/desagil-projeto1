@@ -23,7 +23,6 @@ public class Model {
 			this.setWinner("CPU PLAYER WON");
 		}
 		if (humanPlayer.getRow()==4 && humanPlayer.getCol()==14) {
-			System.out.println("oii");
 			this.setWinner("HUMAN PLAYER WON");
 		}
 	}
