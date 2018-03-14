@@ -32,21 +32,31 @@ public class Controller implements ActionListener, KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-	    if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-	    }
-	    if (e.getKeyCode() == KeyEvent.VK_A) {
-	    	this.model.getHumanPlayer().move(0,-1);
-	    }
-	    if (e.getKeyCode() == KeyEvent.VK_W) {
-	    	this.model.getHumanPlayer().move(-1,0);
-	    }
-	    if (e.getKeyCode() == KeyEvent.VK_S) {
-	    	this.model.getHumanPlayer().move(1,0);
-	    }
-	    if (e.getKeyCode() == KeyEvent.VK_D) {
-	    	this.model.getHumanPlayer().move(0,1);
-	    }
+		Board board = model.getBoard();
+		Player humanPlayer = model.getHumanPlayer();
+		int row = humanPlayer.getRow();
+		int col = humanPlayer.getCol();
+
+		if(e.getKeyCode() == KeyEvent.VK_W) {
+			if(row > 0 && !board.isWall(row - 1, col)) {
+				humanPlayer.move(-1, 0);
+			}
+		}
+		if(e.getKeyCode() == KeyEvent.VK_A) {
+			if(col > 0 && !board.isWall(row, col - 1)) {
+				humanPlayer.move(0, -1);
+			}
+		}
+		if(e.getKeyCode() == KeyEvent.VK_S) {
+			if(row < board.getNumRows() - 1 && !board.isWall(row + 1, col)) {
+				humanPlayer.move(1, 0);
+			}
+		}
+		if(e.getKeyCode() == KeyEvent.VK_D) {
+			if(col < board.getNumCols() - 1 && !board.isWall(row, col + 1)) {
+				humanPlayer.move(0, 1);
+			}
+		}
 		
 	}
 

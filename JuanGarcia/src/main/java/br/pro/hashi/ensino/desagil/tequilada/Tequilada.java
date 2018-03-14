@@ -42,7 +42,7 @@ public class Tequilada {
             	frame.setVisible(true);
 
             	// Cria o relogio
-            	Timer timer = new Timer(1000, controller);
+            	Timer timer = new Timer(100, controller);
 
             	// Inicia o relogio
             	timer.start();
